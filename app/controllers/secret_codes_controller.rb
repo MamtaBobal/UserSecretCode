@@ -1,4 +1,5 @@
 class SecretCodesController < ApplicationController
+  load_and_authorize_resource
   before_action :set_secret_code, only: [:show, :edit, :update, :destroy]
 
   # GET /secret_codes

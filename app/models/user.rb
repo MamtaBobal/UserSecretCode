@@ -27,4 +27,8 @@ class User < ApplicationRecord
 
   has_many :user_roles
   has_many :roles, through: :user_roles
+
+  def admin?
+    roles.find_by_name("admin").present?
+  end
 end
