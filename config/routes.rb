@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     registrations: 'registrations'
   }
 
-  resources :secret_codes do
+  resources :secret_codes, only: [:index] do
     collection do
       get 'generate_n_secret_codes'
     end
