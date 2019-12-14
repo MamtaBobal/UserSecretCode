@@ -4,5 +4,11 @@ Rails.application.routes.draw do
     registrations: 'registrations'
   }
 
+  resources :secret_codes do
+    collection do
+      get 'generate_n_secret_codes'
+    end
+  end
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

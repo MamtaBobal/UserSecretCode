@@ -15,5 +15,6 @@
 #
 
 class SecretCode < ApplicationRecord
+  has_secure_token :code
   belongs_to :user, optional: true
 end
