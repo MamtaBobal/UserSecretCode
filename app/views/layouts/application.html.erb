@@ -9,6 +9,22 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= render :partial => 'shared/navbar' %>
+    <div class="container">
+      <% if notice %>
+        <div class="alert alert-info"><%= notice %></div>
+      <% end %>
+      <% if alert %>
+        <div class="alert alert-waring"><%= alert %></div>
+      <% end %>
+      <%= yield %>
+    </div>
   </body>
+
 </html>
+
+<style type="text/css">
+  .navbar {
+    border-radius: 0px !important;
+  }
+</style>

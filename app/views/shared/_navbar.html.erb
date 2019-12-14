@@ -1,0 +1,10 @@
+<nav class="navbar navbar-default" style="background-color: #343a40!important">
+  <ul class="pull-right">
+    <% if current_user && current_user.admin? %>
+      <li><%= link_to "Secret Codes", secret_codes_path, :style => "color: #33b76f" %></li>
+    <% end %>
+    <% if user_signed_in? %>
+      <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => "btn btn-default btn-primary" %></li>
+    <% end %>
+  </ul> 
+</nav>
