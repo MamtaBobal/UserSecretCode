@@ -8,9 +8,8 @@ class SecretCodesController < ApplicationController
   end
 
   def generate_n_secret_codes
-    params[:count].to_i.times do |i|
-      SecretCode.create
-    end
+    SecretCodeGenerator.new(params[:count]).perform!
     redirect_to secret_codes_path
   end
+
 end

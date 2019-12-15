@@ -15,7 +15,20 @@
 #
 
 class SecretCode < ApplicationRecord
-  has_secure_token :code
+
+  include UniqCodeGenerator
+
+  # Validations
+  before_validation :set_secure_code, on: :create
+  validates :code, presence: true
+
+  # Associations
   belongs_to :user, optional: true
+
+  private
+
+  def set_secure_code
+    self.code = generate_access_token
+  end
 
 end
