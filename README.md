@@ -26,3 +26,6 @@ There are 2 types of users: admin and non-admin. Registration of non-admin users
 ## Admin Credentials
 ###### Email: admin@gmail.com
 ###### Password: admin1
+
+## Heroku link
+###### https://murmuring-retreat-83471.herokuapp.com/users/sign_in
