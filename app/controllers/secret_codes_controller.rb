@@ -5,10 +5,6 @@ class SecretCodesController < ApplicationController
   # GET /secret_codes.json
   def index
     @secret_codes = SecretCode.all
-    respond_to do |format|
-      format.html
-      format.json
-    end
   end
 
   def generate_n_secret_codes
