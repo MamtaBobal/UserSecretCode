@@ -1,5 +1,4 @@
 class SecretCodeGenerator
-
   include UniqCodeGenerator
 
   def initialize(count = 10)

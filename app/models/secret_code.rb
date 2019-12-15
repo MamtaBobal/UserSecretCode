@@ -15,11 +15,12 @@
 #
 
 class SecretCode < ApplicationRecord
-
   include UniqCodeGenerator
 
-  # Validations
+  # Callbacks
   before_validation :set_secure_code, on: :create
+
+  # Validations
   validates :code, presence: true
 
   # Associations
