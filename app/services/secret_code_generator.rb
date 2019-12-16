@@ -1,5 +1,4 @@
 class SecretCodeGenerator
-  include UniqCodeGenerator
 
   def initialize(count = 10)
     @count = count.to_i
@@ -8,7 +7,7 @@ class SecretCodeGenerator
   def perform!
     secret_codes = []
     @count.times do |i|
-      secret_codes << SecretCode.new(code: generate_access_token)
+      secret_codes << SecretCode.new
     end
     SecretCode.import secret_codes
   end
